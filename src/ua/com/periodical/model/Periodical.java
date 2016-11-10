@@ -82,8 +82,13 @@ public class Periodical {
 
 	@Override
 	public String toString() {
-		return " \n Periodical [id=" + id + ", title=" + title + ", price=" + price + ", discription=" + discription
-				+ ", isAdded=" + isAdded + ", isPaided=" + isPaided + "]\n";
-	}
+		return "<td>"+ id + "</td>\n<td>" + title + "</td>\n<td>" + price + "</td>\n<td>" + discription
+				+ "</td>\n<td>" + isAdded + "</td>\n<td>" + isPaided + "</td>";
+		}
 
+
+public static void main(String...args){
+	Periodical p = new Periodical(2,"vvv",2.0,"rrr");
+	System.out.println(p.toString());
+	}
 }
