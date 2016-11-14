@@ -1,8 +1,10 @@
 package ua.com.periodical.model;
+
 /**
  * This class describes periodical(the main substance of this application)
+ * 
  * @version 1.0 09.11.2016
- * @author  Roman Grupskyi
+ * @author Roman Grupskyi
  */
 public class Periodical {
 
@@ -10,9 +12,8 @@ public class Periodical {
 	private String title;
 	private Double price;
 	private String discription;
-	private Boolean isAdded=false;
-	private Boolean isPaided=false;
-	
+	private Boolean isAdded = false;
+	private Boolean isPaided = false;
 
 	public Periodical(Integer id, String title, Double price, String discription, Boolean isAdded, Boolean isPaided) {
 		super();
@@ -82,13 +83,7 @@ public class Periodical {
 
 	@Override
 	public String toString() {
-		return "<td>"+ id + "</td>\n<td>" + title + "</td>\n<td>" + price + "</td>\n<td>" + discription
-				+ "</td>\n<td>" + isAdded + "</td>\n<td>" + isPaided + "</td>";
-		}
-
-
-public static void main(String...args){
-	Periodical p = new Periodical(2,"vvv",2.0,"rrr");
-	System.out.println(p.toString());
+		return "<td>" + id + "</td>\n<td>" + title + "</td>\n<td>" + price + "</td>\n<td>" + discription + "</td>\n<td>"
+				+ isAdded + "</td>\n<td>" + isPaided + "</td>";
 	}
 }

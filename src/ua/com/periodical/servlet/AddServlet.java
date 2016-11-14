@@ -28,7 +28,7 @@ public class AddServlet extends HttpServlet {
 	}
 
 	/**
-	 * retrieves periodical data from request, creates Periodical object and 
+	 * Retrieves periodical data from request, creates Periodical object and 
 	 * saves previosly created Periodical object in ArrayList collection 
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -62,7 +62,7 @@ public class AddServlet extends HttpServlet {
 		}
 	}
 /**
- * this method takes parameters and does validation. 
+ * This method takes parameters and does validation. 
  * If values is not valid, shows on browser html page with appropriate message
  * @param request
  * @param fieldName
@@ -72,7 +72,7 @@ public class AddServlet extends HttpServlet {
  * @throws ValidatorException
  * @throws IOException
  */
-	public String getField(HttpServletRequest request, String fieldName, boolean required, HttpServletResponse response)
+	private String getField(HttpServletRequest request, String fieldName, boolean required, HttpServletResponse response)
 			throws ValidatorException, IOException {
 		String fieldValue = request.getParameter(fieldName);
 		if (fieldValue == null || fieldValue.trim().isEmpty()) {

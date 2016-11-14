@@ -14,7 +14,10 @@ import ua.com.periodical.model.Periodical;
 
 /**
  * Gets 'periodicals' ArrayList from 'ua.com.periodical.dao.MemoryRepository'
- * and shows in a table on brouser
+ * and shows in a table on browser
+ * 
+ * @version 1.2 09.11.2016
+ * @author Roman Grupskyi
  */
 @WebServlet(urlPatterns = "/periodicalList", name = "PeriodicalListServlet")
 public class PeriodicalListServlet extends HttpServlet {
@@ -51,7 +54,9 @@ public class PeriodicalListServlet extends HttpServlet {
 		response.getWriter().println("<td>isPaided</td>");
 		response.getWriter().println("</tr>");
 		
-		if(list.isEmpty()) response.getWriter().println("List is empty!");
+		if(list.isEmpty()) {
+			response.getWriter().println("List is empty!");
+		}
 		else
 		for (Periodical periodical : list) {
 			response.getWriter().println("<tr>"+periodical.toString()+"</tr>");
