@@ -25,16 +25,5 @@
     <url-pattern>/addToList</url-pattern>
   </servlet-mapping>
   
-  <servlet>
-    <servlet-name>ServletSumm</servlet-name>
-    <servlet-class>ua.com.periodical.servlet.ServletSumm</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletSumm</servlet-name>
-    <url-pattern>/summ</url-pattern>
-  </servlet-mapping>
-  
- 
-  
-  
+
 </web-app>

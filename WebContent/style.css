@@ -44,10 +44,7 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+
 /*My Css*/
 #page {
 	height: 1400px;
@@ -127,7 +124,22 @@ table {
     color: #dba606;
     background: rgba(107, 99, 99, 0.73);
     margin-top: 100px;
-        width: 320px;
+    width: 320px;
     height: 300px;
     margin-bottom: 10px;
+}
+td {
+	padding-left: 10px;
+}
+#search {
+	width: 700px;
+	height: 20px;
+    margin-top: 80px;
+    margin-left: 50px;
+    
+}
+#searchBatton {
+	width: 100px;
+    height: 26px;
+    margin-left: 10px;
 }

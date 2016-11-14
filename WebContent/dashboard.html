@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>AddToList</title>
+<title>periodicalList</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -15,38 +15,26 @@
 		</ul>		
 	</div>
 	<div id= "content">
-	
 		<form id="form" action="periodicalList" method="get">
+			<input id ="search" type="text" name="title" placeholder="search by title here " >
+			<input type="submit" value="Search" id="searchBatton">
+		
 		<center >
-            <table id="addForm" border="1px" >
+           <table id="addForm" border='1' width='30%' cellpadding='5'>
                 <thead>
                     <tr>
-                        <th colspan="2">Pease add Periodical<br><br></th>
+                        <th colspan='6'>Periodicals List:</th>
+                        <tr>
                     </tr>
                 </thead>
-				<tr>
-					<td><label for="id"> Id: </label></td>
-					<td><input type="text" name="id" placeholder="Enter periodicals's id here"><br><br></td>
-				</tr>
-				<tr>
-					<td><label for="title">Title: </label></td>
-					<td><input type="text" name="title" placeholder="Enter title here"><br><br></td>
-				</tr>
-				<tr>
-					<td><label for="description">Description: </label></td>
-					<td><textarea rows="2" cols="21" name="description" placeholder="Enter description here"></textarea><br></td>
-				</tr>
-				<tr>
-					<td><label for="checkbox">Type: </label></td>
-					<td><input type="checkbox" name="checkbox"><br></td>
-				</tr>
-				<tr>
-					<td><label for="price">Price: </label></td>
-					<td><input type="text" name="price" placeholder="Enter price here"><br><br></td>
-				</tr>
-				<tr>
-				<td></td>
-				<td><input type="submit" value="Save"><br></td>
+				<tr id="dashboard">
+					<td>id</td>
+					<td>title</td>
+					<td>price</td>
+					<td>description</td>
+					<td>isAdded</td>
+					<td>isPaided</td>
+					<td></td>
 				</tr>
 			</table>
 		</center>
