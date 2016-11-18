@@ -1,0 +1,320 @@
+@charset "utf-8";
+/*to reset all settings*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+div {
+	display: block;
+}
+/*My css:*/
+#page-container {
+	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
+	/*	max-width: 960px;*/
+	/*
+ 	background-image: url("magazines.jpg");
+	background-repeat: repeat-y;
+*/
+}
+
+#header {
+	height: 60px;
+	width: 100%;
+	/*background-color:#0c1013;*/
+	background-image: url(../img/wallpaper.jpg);
+}
+
+.container {
+	width: 900px;
+	height: auto;
+	margin: 0 auto;
+	color: #dba606;
+}
+
+#buttons-area {
+	float: left;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+#registration-area {
+	float: right;
+	margin-top: 20px;
+}
+
+#registration-area  a:hover {
+	color: wheat;
+}
+
+#footer {
+	clear: both;
+	height: 60px;
+	width: 100%;
+	background-image: url(../img/wallpaper.jpg);
+	margin-bottom: 0px;
+	color: #dba606;
+	
+}
+
+#content {
+	margin: 1px;
+	padding: 15px;
+	/*    background-color:rgba(50,52,52,0.9);*/
+	min-height: 800px;
+	border: medium;
+	/*	box-shadow: 1px 1px 10px 1px #ebebeb;*/
+	color: #dba606;
+}
+
+#buttons-area li {
+	float: left;
+	color: #dba606;
+	/*	padding-left: 40px;*/
+}
+
+#buttons-area li :hover {
+	color: wheat;
+}
+
+h1 {
+	display: block;
+	font-size: 2em;
+	-webkit-margin-before: 0.67em;
+	-webkit-margin-after: 0.67em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+
+h3 {
+	display: block;
+	font-size: 1.17em;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+
+h4 {
+	display: block;
+	font-size: 1em;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+
+/*
+Below is the syntax for adding values to the box shadow property 
+box-shadow: none|h-shadow v-shadow blur spread color |inset|initial|inherit;
+*/
+.boxShadow {
+	/*Chrome, Safari*/
+	-webkit-box-shadow: 6px 6px 12px 8px #ebebeb;
+	/*Firefox*/
+	-moz-box-shadow: 4px 4px 6px 7px #ebebeb;
+	/*Standard Syntax*/
+	box-shadow: 6px 6px 14px 6px #ebebeb;
+}
+
+.image-add {
+	padding-left: 1px;
+	width: 250px;
+	height: 320px;
+	border: 1px solid gba(78, 78, 78, 0.89);
+	border-radius: 5px;
+	/*  background-image: url(formScreen.png);*/
+	margin: 10px;
+	background: url("../img/formScreen1.png") center center no-repeat;
+	box-shadow: inset 1px 1px 5px 1px rgba(78, 79, 79, 1.00);
+	/* Chrome, Safari */
+	-webkit-box-shadow: inset 5px 5px 3px rgba(78, 79, 79, 1.00);
+	/* Firefox */
+	-moz-box-shadow: inset 5px 5px 3px rgba(78, 79, 79, 1.00);
+	/* Standard syntax */
+	box-shadow: inset 1px 1px 5px 3px rgba(78, 79, 79, 1.00);
+}
+
+.image-display {
+	width: 250px;
+	height: 300px;
+	border: 1px solid rgba(81, 81, 81, 0.96);
+	border-radius: 5px;
+	background-image: url(../img/displayScreen.png);
+	margin: 10px;
+	box-shadow: inset 1px 1px 5px 1px #0c1013;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	background: url("../img/magazines.jpg") center center repeat-y;
+}
+
+.button {
+	color: #dba606;
+	text-decoration: none;
+	padding: 10px;
+	margin-right: 20px;
+}
+
+.registration-link {
+	text-decoration: none;
+	color: #dba606;
+}
+
+#footer-container {
+	padding: 20px;
+	margin-top: 15px;
+	color: dba606;
+}
+
+.instruction {
+	list-style: disc;
+	margin-left: 15px;
+}
+#form {
+ 	width: 320px;
+    height: 300px;
+	border-line:0px;
+	margin: 0 auto;
+	
+}
+#addForm {
+	font-size: 20px;
+    color: #dba606;
+    background: rgba(107, 99, 99, 0.73);
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+td {
+	padding-left: 10px;
+}
+#search {
+	resize: horizontal;
+	width:75%;
+	height: 20px;
+    margin-top: 80px;
+    margin-left: 50px;
+	margin: 0 auto;
+    float:left;
+    
+}
+#searchBatton {
+	width: 100px;
+    height: 26px;
+/*
+    margin-left: 10px;
+    margin-top: 80px;
+*/
+	float: right;
+}
+.text-center {
+	text-align: center;
+}
+
+#displayTable {
+	width :50%;
+	border:1px solid wheat;
+	cellpadding: 7;
+	font-size: 20px;
+	color: #dba606;
+    background: rgba(107, 99, 99, 0.73);
+/*
+    margin-top: 80px;
+    margin-bottom: 10px;
+*/
+	height: auto;
+	clear: both;
+	margin:  0 auto;
+}
+
+.dashboard {
+/*	width: 30px;*/
+	margin: 0 auto;
+	padding: 15px;
+	border: 1px solid wheat;
+	
+}
+.dashboard a:hover{
+	color:wheat;
+	
+}
+
+.button-delete {
+	width: 70px;
+	height: 20px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.border {
+	border: 2px solid whrgba(237,237,237,1.00);
+}
+
+.description {
+	color:#dba606;
+	
+}
+
+
+#search-form {
+	width: 500px;
+}
+
+#form-container {
+	height: 35px;
+	margin-top: 100px;
+	
+}
+
+#table-container {
+	width: 100%;
+	
+}
