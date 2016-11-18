@@ -238,10 +238,12 @@ td {
 }
 #search {
 	resize: horizontal;
-	width:75%;
+	width:85%;
 	height: 20px;
+/*
     margin-top: 80px;
     margin-left: 50px;
+*/
 	margin: 0 auto;
     float:left;
     
@@ -263,7 +265,7 @@ td {
 	width :50%;
 	border:1px solid wheat;
 	cellpadding: 7;
-	font-size: 20px;
+	font-size:20px;
 	color: #dba606;
     background: rgba(107, 99, 99, 0.73);
 /*
@@ -315,6 +317,7 @@ td {
 }
 
 #table-container {
-	width: 100%;
+	min-width: 600px;
+	
 	
 }
