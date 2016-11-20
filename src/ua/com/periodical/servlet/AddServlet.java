@@ -19,7 +19,7 @@ import ua.com.periodical.dao.MemoryRepository;
  * @version 2.0 09.11.2016
  * @author Roman Grupskyi
  */
-@WebServlet(urlPatterns = "/addToList", name = "AddServlet")
+@WebServlet(urlPatterns = "/pages/addToList", name = "AddServlet")
 public class AddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

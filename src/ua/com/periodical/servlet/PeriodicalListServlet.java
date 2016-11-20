@@ -19,7 +19,7 @@ import ua.com.periodical.model.Periodical;
  * @version 1.2 09.11.2016
  * @author Roman Grupskyi
  */
-@WebServlet(urlPatterns = "/periodicalList", name = "PeriodicalListServlet")
+@WebServlet(urlPatterns = "/pages/periodicalList", name = "PeriodicalListServlet")
 public class PeriodicalListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
