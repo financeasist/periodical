@@ -30,6 +30,13 @@ public class PeriodicalListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		response.sendRedirect("Dashboard.jsp");
+	}
+		
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		MemoryRepository memoryRepositoryIinstance = MemoryRepository.getInstance();
 		ArrayList<Periodical> list = memoryRepositoryIinstance.getPeriodicals();
 		
@@ -65,10 +72,6 @@ public class PeriodicalListServlet extends HttpServlet {
 		response.getWriter().println("</html>");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		doGet(request, response);
-	}
+	
 
 }

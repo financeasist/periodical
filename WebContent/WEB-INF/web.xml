@@ -18,7 +18,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AddServlet</servlet-name>
-    <url-pattern>/pages/addToList</url-pattern>
+    <url-pattern>/pages/AddServlet</url-pattern>
   </servlet-mapping>
   <servlet>
   <servlet-name>HomeServlet</servlet-name>

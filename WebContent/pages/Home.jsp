@@ -15,8 +15,8 @@
 				<div id="buttons-area">
 					<ul>
 						<li><a href="Home.jsp" class="button">Home</a></li>
-						<li><a href="Add.jsp" class="button">Add</a></li>
-						<li><a href="Dashboard.jsp" class="button">Dashboard</a></li>
+						<li><a href="AddServlet" class="button">Add</a></li>
+						<li><a href="periodicalList" class="button">Dashboard</a></li>
 
 					</ul>
 				</div>

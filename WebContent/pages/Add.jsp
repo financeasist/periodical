@@ -15,8 +15,8 @@
 				<div id="buttons-area">
 					<ul>
 						<li><a href="Home.jsp" class="button">Home</a></li>
-						<li><a href="Add.jsp" class="button">Add</a></li>
-						<li><a href="Dashboard.jsp" class="button">Dashboard</a></li>
+						<li><a href="AddServlet" class="button">Add</a></li>
+						<li><a href="periodicalList" class="button">Dashboard</a></li>
 					</ul>
 				</div>
 				<div id="registration-area">
@@ -33,7 +33,7 @@
 						filds in the table:</h3>
 			</span>
 			<hr>
-			<form id="form" action="addToList" method="get">
+			<form id="form" action="AddServlet" method="post">
 				
 					<table height="298" border="1" id="addForm">
 						<thead>
