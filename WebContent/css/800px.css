@@ -7,10 +7,12 @@
 }
 #displayTable {
 width:450px;
-font-size: 10px;
+font-size: 15px;
 	
 }
 #search {
 	resize: horizontal;
 	width:75%;
 }
+#content {
+	min-height: 1500px;

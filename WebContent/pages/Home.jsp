@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <link rel="stylesheet" type="text/css" href="../css/800px.css"
 	media="screen and (max-width:900px)" />
-<title>index</title>
+<title>Periodical</title>
 </head>
 
 <body>
@@ -41,6 +41,7 @@
 						filds in the table:</li>
 					<div class="image-add"></div>
 					</li>
+					<br>
 					<hr>
 					<li><h4>To Display/Search/Remove periodical:</h4>
 					<li class="instruction">You have to press on button
@@ -49,6 +50,7 @@
 						table:</li>
 					<div class="image-display"><a href="#"></a></div>
 					</li>
+					<br>
 					<hr>
 				</ul>
 			</div>

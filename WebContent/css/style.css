@@ -54,7 +54,7 @@ div {
 	margin: 0 auto;
 	margin-left: auto;
 	margin-right: auto;
-	/*	max-width: 960px;*/
+	
 	/*
  	background-image: url("magazines.jpg");
 	background-repeat: repeat-y;
@@ -104,7 +104,7 @@ div {
 	margin: 1px;
 	padding: 15px;
 	/*    background-color:rgba(50,52,52,0.9);*/
-	min-height: 800px;
+	min-height: 900px;
 	border: medium;
 	box-shadow: 1px 1px 10px 1px #ebebeb;
 	color: #dba606;
@@ -266,7 +266,7 @@ td {
 }
 
 #displayTable {
-	width :50%;
+	width :60%;
 	border:1px solid wheat;
 	cellpadding: 7;
 	font-size:20px;
@@ -282,7 +282,7 @@ td {
 }
 
 .dashboard {
-/*	width: 30px;*/
+
 	margin: 0 auto;
 	padding: 15px;
 	border: 1px solid wheat;
@@ -302,21 +302,34 @@ td {
 
 .border {
 	border: 2px solid whrgba(237,237,237,1.00);
+	color:wheat;
 }
 
 .description {
 	color:#dba606;
 	
 }
-
-
+.thDescription{
+	color:wheat;
+	margin: 0 auto;
+	padding: 15px;
+	border: 1px solid wheat;
+	
+}
+.thDescription a{
+	color:wheat;
+	text-decoration: none;
+}
+.thDescription a:hover {
+	color: #dba606;
+}
 #search-form {
 	width: 500px;
 }
 
 #form-container {
 	height: 35px;
-	margin-top: 100px;
+	margin-top: 10px;
 	
 }
 
@@ -324,4 +337,20 @@ td {
 	min-width: 600px;
 	
 	
+}
+#succsessInfo {
+	color:green;
+	text-align: center;
+	padding-top: 15px;
+}
+.info {
+	display: block;
+    height: 50px;
+    color: red;
+    text-align: center;
+}
+#errorInfo {
+	color:red;
+	text-align: center;
+	padding-top: 15px;
 }

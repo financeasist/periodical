@@ -2,6 +2,7 @@ package ua.com.periodical.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,10 +23,6 @@ import ua.com.periodical.dao.MemoryRepository;
 @WebServlet(urlPatterns = "/pages/AddServlet", name = "AddServlet")
 public class AddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	public AddServlet() {
-		super();
-	}
 
 	/**
 	 * Retrieves periodical data from request, creates Periodical object and
@@ -52,16 +49,13 @@ public class AddServlet extends HttpServlet {
 			Periodical periodical = new Periodical(idInt, title, priceD, discription);
 			MemoryRepository memoryRepositoryIinstance = MemoryRepository.getInstance();
 			memoryRepositoryIinstance.addPeriodical(periodical);
+			
+//			request.getSession().setAttribute("repositoryIinstance", "memoryRepositoryIinstance");
+			request.setAttribute("info", "succsessInfo");
+			request.setAttribute("String", "NEW PERIODICAL ADDED TO lIST!");
+			RequestDispatcher reqDispatcher= request.getServletContext().getRequestDispatcher("/pages/Add.jsp");
+			reqDispatcher.forward(request, response);
 
-			response.getWriter().println("<html>");
-			response.getWriter().println("<head>");
-			response.getWriter().println("<title>addToList</title>");
-			response.getWriter().println("</head>");
-			response.getWriter().println("<body>");
-
-			response.getWriter().println("new periodical added to List!");
-			response.getWriter().println("</body>");
-			response.getWriter().println("</html>");
 
 		} catch (ValidatorException e) {
 			e.printStackTrace();
@@ -79,23 +73,18 @@ public class AddServlet extends HttpServlet {
 	 * @return fieldValue
 	 * @throws ValidatorException
 	 * @throws IOException
+	 * @throws ServletException 
 	 */
 	private String getField(HttpServletRequest request, String fieldName, boolean required,
-			HttpServletResponse response) throws ValidatorException, IOException {
+			HttpServletResponse response) throws ValidatorException, IOException, ServletException {
 		String fieldValue = request.getParameter(fieldName);
 		if (fieldValue == null || fieldValue.trim().isEmpty()) {
 			if (required) {
-				response.getWriter().println("<html>");
-				response.getWriter().println("<head>");
-				response.getWriter().println("<title>addToList</title>");
-				response.getWriter().println("</head>");
-				response.getWriter().println("<body>");
-				response.getWriter()
-						.println("PLEASE ENTER THE VALUE TO REQUIRED FIELDS! </br></br>"
-								+ " required fields - 'id','title' and 'price'" + "</br>"
-								+ "all fields - 'id','title', 'price' and 'description' ");
-				response.getWriter().println("</body>");
-				response.getWriter().println("</html>");
+				request.setAttribute("info", "errorInfo");
+				request.setAttribute("String", "PLEASE ENTER THE VALUE TO REQUIRED FIELDS!");
+				RequestDispatcher reqDispatcher= request.getServletContext().getRequestDispatcher("/pages/Add.jsp");
+				reqDispatcher.forward(request, response);
+
 				throw new ValidatorException(fieldValue);
 			}
 		}

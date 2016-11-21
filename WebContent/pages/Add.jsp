@@ -33,6 +33,14 @@
 						filds in the table:</h3>
 			</span>
 			<hr>
+			<div id="<%= request.getAttribute("info") %>">
+			<% String s = (String) request.getAttribute("String");
+			if(s== null){
+				s="";
+			}
+			%>
+			<%=s %>
+			</div>
 			<form id="form" action="AddServlet" method="post">
 				
 					<table height="298" border="1" id="addForm">
