@@ -231,6 +231,8 @@ html {
 	
 }
 #addForm {
+	height:320px;
+	border: 1;
 	font-size: 20px;
     color: #dba606;
     background: rgba(107, 99, 99, 0.73);
