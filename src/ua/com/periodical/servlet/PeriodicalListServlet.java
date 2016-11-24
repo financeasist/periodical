@@ -14,8 +14,9 @@ import ua.com.periodical.dao.MemoryRepository;
 import ua.com.periodical.model.Periodical;
 
 /**
- * Gets 'periodicals' ArrayList from 'ua.com.periodical.dao.MemoryRepository'
- * and shows in a table on browser
+ * In doGET method: Gets 'periodicals' ArrayList from 'ua.com.periodical.dao.MemoryRepository'
+ * and check it. If list is empty, then sents appropriate message, else sents that list into  'pages/Dashboard.jsp'.
+ *  Also this servlet takes and redirects to 'pages/Dashboard.jsp' a request param from RemoveServlet.
  * 
  * @version 1.2 09.11.2016
  * @author Roman Grupskyi
@@ -24,67 +25,37 @@ import ua.com.periodical.model.Periodical;
 public class PeriodicalListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public PeriodicalListServlet() {
-		super();
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		MemoryRepository memoryRepositoryIinstance = MemoryRepository.getInstance();
 		ArrayList<Periodical> list = memoryRepositoryIinstance.getPeriodicals();
-		
-		if(list.isEmpty()) {
-			request.setAttribute("emptyString", "List is empty!");
-		}
-		else
-		{
+
+		if (list.isEmpty()) {
+			request.setAttribute("info", "info");
+			request.setAttribute("String", "List is empty!");
+		} else {
+
 			request.setAttribute("list", list);
+
 		}
-		RequestDispatcher reqDispatcher= request.getServletContext().getRequestDispatcher("/pages/Dashboard.jsp");
-		reqDispatcher.forward(request, response);
+		String key1 = request.getParameter("key1");
+		String value1 = request.getParameter("value1");
+		String key2 = request.getParameter("key2");
+		String value2 = request.getParameter("value2");
+
+		if ((key1 != null) && (key2 != null)) {
+			request.setAttribute(key1, value1);
+			request.setAttribute(key2, value2);
 		}
 
-	
-		
-	
+		RequestDispatcher reqDispatcher = request.getServletContext().getRequestDispatcher("/pages/Dashboard.jsp");
+		reqDispatcher.forward(request, response);
+	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		MemoryRepository memoryRepositoryIinstance = MemoryRepository.getInstance();
-		ArrayList<Periodical> list = memoryRepositoryIinstance.getPeriodicals();
 		
-//		response.getWriter().println("<html>");
-//		response.getWriter().println("<head>");
-//		response.getWriter().println("<title>Periodicals List</title>");
-//		response.getWriter().println("</head>");
-//		response.getWriter().println("<body>");
-//		response.getWriter().println("<center>");
-//		response.getWriter().println("<table border='1' width='30%' cellpadding='5'>");
-//		response.getWriter().println("<thead>");
-//		response.getWriter().println("<tr>");
-//		response.getWriter().println("<th colspan='6'>Periodicals List</th>");
-//		response.getWriter().println("</tr>");
-//		response.getWriter().println("</thead>");
-//		response.getWriter().println("<tr>");
-//		response.getWriter().println("<td>id</td>");
-//		response.getWriter().println("<td>title</td>");
-//		response.getWriter().println("<td>price</td>");
-//		response.getWriter().println("<td>description</td>");
-//		response.getWriter().println("<td>isAdded</td>");
-//		response.getWriter().println("<td>isPaided</td>");
-//		response.getWriter().println("</tr>");
-//		
-//		if(list.isEmpty()) {
-//			request.setAttribute("emptytring", "List is empty!");
-//		}
-//		else
-//		for (Periodical periodical : list) {
-//			response.getWriter().println("<tr>"+periodical.toString()+"</tr>");
-//		}
-//		response.getWriter().println("</body>");
-//		response.getWriter().println("</html>");
 	}
-
-	
 
 }

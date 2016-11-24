@@ -1,6 +1,7 @@
 package ua.com.periodical.dao;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import ua.com.periodical.model.Periodical;
 
@@ -47,4 +48,23 @@ public class MemoryRepository {
 		this.periodicals = periodicals;
 	}
 
+	public void removeById(Integer idInt) {
+		Iterator<Periodical> iterator = periodicals.iterator();
+		while (iterator.hasNext()) {
+			Periodical periodical = iterator.next();
+			if (periodical.getId() == idInt)
+				iterator.remove();
+		}
+	}
+	public Periodical getByTitle(String title) {
+		Periodical periodical = null;
+		for (Periodical per:periodicals){
+			if(per.getTitle().equals(title)) {
+				periodical = per;
+			}
+		}
+		
+		return periodical;
+		
+	}
 }

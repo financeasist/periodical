@@ -350,9 +350,21 @@ td {
     height: 50px;
     color: red;
     text-align: center;
+    padding-top: 15px;
 }
 #errorInfo {
 	color:red;
 	text-align: center;
 	padding-top: 15px;
+}
+.succsessInfo {
+	color:green;
+	text-align: center;
+	display: block;
+    height: 50px;
+    padding-top: 15px;
+}
+#mesage-block{
+	height: 50px;
+	 padding-top: 15px;
 }

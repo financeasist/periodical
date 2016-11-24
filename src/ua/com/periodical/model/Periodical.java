@@ -83,7 +83,7 @@ public class Periodical {
 
 	@Override
 	public String toString() {
-		return "<td>" + id + "</td>\n<td>" + title + "</td>\n<td>" + price + "</td>\n<td>" + discription + "</td>\n<td>"
-				+ isAdded + "</td>\n<td>" + isPaided + "</td>";
+		return "id= '" + id + "', \ntitle= '" + title + "', \nprice= '" + price + "', \ndiscription= '" + discription + "', \nisAdded= '"
+				+ isAdded + "',\nisPaided= '" + isPaided+"' \n" ;
 	}
 }

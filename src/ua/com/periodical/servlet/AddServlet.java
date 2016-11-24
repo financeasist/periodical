@@ -14,10 +14,12 @@ import ua.com.periodical.model.Periodical;
 import ua.com.periodical.dao.MemoryRepository;
 
 /**
- * Servlet: AddServlet retrieves periodical data from request, creates
- * periodical object and save him into ArrayList
+ * In doGet method -  AddServlet just send redirect to Add.jsp.
+ * In doPost method -  AddServlet retrieves periodical data from request, does validation, creates
+ * periodical object and save him into ArrayList. If process was succsessfull - sents appropriate message to Add.jsp
+ * else sent error message.
  * 
- * @version 2.0 09.11.2016
+ * @version 2.1 23.11.2016
  * @author Roman Grupskyi
  */
 @WebServlet(urlPatterns = "/pages/AddServlet", name = "AddServlet")
@@ -50,7 +52,6 @@ public class AddServlet extends HttpServlet {
 			MemoryRepository memoryRepositoryIinstance = MemoryRepository.getInstance();
 			memoryRepositoryIinstance.addPeriodical(periodical);
 			
-//			request.getSession().setAttribute("repositoryIinstance", "memoryRepositoryIinstance");
 			request.setAttribute("info", "succsessInfo");
 			request.setAttribute("String", "NEW PERIODICAL ADDED TO lIST!");
 			RequestDispatcher reqDispatcher= request.getServletContext().getRequestDispatcher("/pages/Add.jsp");
@@ -64,7 +65,7 @@ public class AddServlet extends HttpServlet {
 
 	/**
 	 * This method takes parameters and does validation. If values is not valid,
-	 * shows on browser html page with appropriate message
+	 * sents on Add.jsp page appropriate message
 	 * 
 	 * @param request
 	 * @param fieldName

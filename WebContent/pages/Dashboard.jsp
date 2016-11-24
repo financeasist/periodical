@@ -30,30 +30,11 @@
 		</div>
 		<div class="container">
 			<div id="content">
-				<div class="info">
-					<%
-						String s = (String) request.getAttribute("emptyString");
-					%>
-
-					<%
-						if (s == null)
-							s = "";
-					%>
-					<%=s%>
-					<!--<c:if test="${s==null }">
-						<c:set var="s" value=""></c:set>
-					</c:if>
-					<c:out value="${s}"></c:out> -->
-
-
-
-
-				</div>
+				<div id="mesage-block" class="${info}">${String}</div>
 				<div id="form-container">
-					<form action="periodicalList" method="post">
-						<input id="search" type="text" name="title"
-							placeholder="search by title here "> <input type="submit"
-							value="Search" id="searchBatton">
+					<form action="../pages/SearchServlet" method="get">
+						<input id="search" type="text" name="title" placeholder="search by title here ">
+						<input type="submit" value="Search" id="searchBatton">
 					</form>
 				</div>
 				<br> <br> <br>
@@ -71,31 +52,21 @@
 								<td class="thDescription"><a href="#">description</a></td>
 								<td class="dashboard">isAdded</td>
 								<td class="dashboard">isPaided</td>
-								<td class="dashboard"><button class="button-delete">delete</button></td>
+								<td class="dashboard">Operation</td>
 							</tr>
 						</thead>
 
 						<c:forEach items="${requestScope.list}" var="periodical">
 							<tr>
-
 								<td class="dashboard">${periodical.id}</td>
 								<td class="dashboard">${periodical.title}</td>
 								<td class="dashboard">${periodical.price}</td>
 								<td class="dashboard"><a href="#" class="description">${periodical.discription}</a></td>
 								<td class="dashboard">false</td>
 								<td class="dashboard">false</td>
-
-
-
 								<td class="dashboard">
 									<form action="../pages/RemoveServlet" method="post">
-
-										<%
-											request.getServletContext().setAttribute("id", request.getAttribute("id"));
-											application.setAttribute("title", "${periodical.title}");
-											application.setAttribute("price", "${periodical.price}");
-											application.setAttribute("title", "${periodical.discription}");
-										%>
+										<input type="hidden" name="id" value="${periodical.id}">
 										<input type="submit" class="button-delete" value="delete">
 									</form>
 								</td>
