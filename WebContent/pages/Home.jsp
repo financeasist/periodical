@@ -33,6 +33,7 @@
 				</span>
 				<hr>
 				<h3>Here are some features available at the moment:</h3>
+				<br>
 				<ul>
 					<li><h4>To ADD new periodical:</h4>
 					<li class="instruction">You have to press on button 'Add' in
