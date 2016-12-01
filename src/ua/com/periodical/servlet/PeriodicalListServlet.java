@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ua.com.periodical.dao.MemoryRepository;
+import ua.com.periodical.dao.MemoryRepositoryDao;
 import ua.com.periodical.model.Periodical;
 
 /**
- * In doGET method: Gets 'periodicals' ArrayList from 'ua.com.periodical.dao.MemoryRepository'
+ * In doGET method: Gets 'periodicals' ArrayList from 'ua.com.periodical.dao.MemoryRepositoryDao'
  * and check it. If list is empty, then sents appropriate message, else sents that list into  'pages/Dashboard.jsp'.
  *  Also this servlet takes and redirects to 'pages/Dashboard.jsp' a request param from RemoveServlet.
  * 
@@ -27,7 +27,7 @@ public class PeriodicalListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		MemoryRepository memoryRepositoryIinstance = MemoryRepository.getInstance();
+		MemoryRepositoryDao memoryRepositoryIinstance = MemoryRepositoryDao.getInstance();
 		ArrayList<Periodical> list = memoryRepositoryIinstance.getPeriodicals();
 
 		if (list.isEmpty()) {

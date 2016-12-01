@@ -12,22 +12,22 @@ import ua.com.periodical.model.Periodical;
  * @version 1.2 10.11.2016
  * @author Roman Grupskyi
  */
-public class MemoryRepository {
+public class MemoryRepositoryDao{
 
 	private ArrayList<Periodical> periodicals;
 
 	/**
 	 * Here is implementation by Singleton pattern
 	 */
-	private MemoryRepository() {
+	private MemoryRepositoryDao() {
 		this.setPeriodicals(new ArrayList<Periodical>());
 	}
 
 	private static class SingletonHelper {
-		private static final MemoryRepository INSTANCE = new MemoryRepository();
+		private static final MemoryRepositoryDao INSTANCE = new MemoryRepositoryDao();
 	}
 
-	public static MemoryRepository getInstance() {
+	public static MemoryRepositoryDao getInstance() {
 		return SingletonHelper.INSTANCE;
 	}
 

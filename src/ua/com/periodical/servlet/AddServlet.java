@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import sun.security.validator.ValidatorException;
 import ua.com.periodical.model.Periodical;
-import ua.com.periodical.dao.MemoryRepository;
+import ua.com.periodical.dao.MemoryRepositoryDao;
 
 /**
  * In doGet method -  AddServlet just send redirect to Add.jsp.
@@ -39,9 +39,10 @@ public class AddServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String title = null;
 		try {
 			String id = getField(request, "id", true, response);
-			String title = getField(request, "title", true, response);
+			 title = getField(request, "title", true, response);
 			String price = getField(request, "price", true, response);
 			String discription = getField(request, "description", false, response);
 
@@ -49,17 +50,21 @@ public class AddServlet extends HttpServlet {
 			Double priceD = Double.parseDouble(price);
 
 			Periodical periodical = new Periodical(idInt, title, priceD, discription);
-			MemoryRepository memoryRepositoryIinstance = MemoryRepository.getInstance();
+			MemoryRepositoryDao memoryRepositoryIinstance = MemoryRepositoryDao.getInstance();
 			memoryRepositoryIinstance.addPeriodical(periodical);
 			
 			request.setAttribute("info", "succsessInfo");
-			request.setAttribute("String", "NEW PERIODICAL ADDED TO lIST!");
+			request.setAttribute("String", "SUCCESS! PERIODICAL '"+title+"' WAS ADDED!");
 			RequestDispatcher reqDispatcher= request.getServletContext().getRequestDispatcher("/pages/Add.jsp");
 			reqDispatcher.forward(request, response);
 
 
-		} catch (ValidatorException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			request.setAttribute("info", "info");
+			request.setAttribute("String", "ERROR! PERIODICAL '"+title+"' CAN'T BE ADDED DUE TO 'Id' OR 'Price' FIELD'S VALUE WAS ENTERED WRONG!<br>"
+					+ "THE RIGHT TYPE OF THIS VALUE IS  INTEGER!");
+			RequestDispatcher reqDispatcher= request.getServletContext().getRequestDispatcher("/pages/Add.jsp");
+			reqDispatcher.forward(request, response);
 		}
 	}
 

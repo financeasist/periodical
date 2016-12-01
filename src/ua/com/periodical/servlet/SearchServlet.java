@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ua.com.periodical.dao.MemoryRepository;
+import ua.com.periodical.dao.MemoryRepositoryDao;
 import ua.com.periodical.model.Periodical;
 
 /**
@@ -23,11 +23,12 @@ public class SearchServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String title = request.getParameter("title");
-		MemoryRepository memoryRepositoryIinstance = MemoryRepository.getInstance();
-		Periodical periodical = memoryRepositoryIinstance.getByTitle(title);
-		try{
+		MemoryRepositoryDao memoryRepositoryIinstance = MemoryRepositoryDao.getInstance();
+		Periodical periodical = null;
+		try {
+			periodical = memoryRepositoryIinstance.getByTitle(title);
 			System.out.println(periodical.toString());
-		}catch(Exception e){
+		} catch (Exception e) {
 			request.setAttribute("info", "info");
 			request.setAttribute("String", " OBJECT WITH THIS TITLE NOT FOUND!");
 		}

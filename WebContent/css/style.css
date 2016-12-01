@@ -364,6 +364,14 @@ td {
     height: 50px;
     padding-top: 15px;
 }
+#info {
+	display: block;
+    height: 50px;
+    color: red;
+    text-align: center;
+    padding-top: 15px;
+    line-height: 1.5; 
+}
 #mesage-block{
 	height: 50px;
 	 padding-top: 15px;
