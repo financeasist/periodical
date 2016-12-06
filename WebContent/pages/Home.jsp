@@ -22,7 +22,7 @@
 				</div>
 				<div id="registration-area">
 					<span class="registration-link"><a>Register | </a></span> <a
-						href="#" class="registration-link"> Login</a>
+						href="Login.jsp" class="registration-link"> Login</a>
 				</div>
 			</div>
 		</div>

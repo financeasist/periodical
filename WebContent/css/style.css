@@ -239,6 +239,13 @@ html {
     margin-top: 50px;
     margin-bottom: 10px;
 }
+.authentificationForm {
+	margin-top: 50px;
+	height: 200px;
+	background: rgba(107, 99, 99, 0.73);
+	text-align: center;
+}
+
 td {
 	padding-left: 10px;
 }

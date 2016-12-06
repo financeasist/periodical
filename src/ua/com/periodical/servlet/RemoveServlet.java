@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ua.com.periodical.dao.MemoryRepositoryDao;
+import ua.com.periodical.dao.impl.MemoryRepositoryDaoImpl;
 
 /**
  * This Servlet removes periodical from memory repository by id
@@ -24,7 +24,7 @@ public class RemoveServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		MemoryRepositoryDao memoryRepositoryIinstance = MemoryRepositoryDao.getInstance();
+		MemoryRepositoryDaoImpl memoryRepositoryIinstance = MemoryRepositoryDaoImpl.getInstance();
 		String id = (String) request.getParameter("id");
 
 		String succsessUrl = "../pages/periodicalList?key1=info&value1=succsessInfo&key2=String&value2=PERIODICAL WAS SUCCSESSFULLY REMOVED FROM lIST!";

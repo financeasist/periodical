@@ -9,11 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ua.com.periodical.dao.MemoryRepositoryDao;
+import ua.com.periodical.dao.impl.MemoryRepositoryDaoImpl;
 import ua.com.periodical.model.Periodical;
 
 /**
- * Servlet implementation class SearchServlet
+ * SearchServlet search  periodical by title and send it into list in request Attribute;
+ * 
+ * @version 1.2 15.11.2016
+ * @author Roman Grupskyi
  */
 @WebServlet("/SearchServlet")
 public class SearchServlet extends HttpServlet {
@@ -23,7 +26,7 @@ public class SearchServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String title = request.getParameter("title");
-		MemoryRepositoryDao memoryRepositoryIinstance = MemoryRepositoryDao.getInstance();
+		MemoryRepositoryDaoImpl memoryRepositoryIinstance = MemoryRepositoryDaoImpl.getInstance();
 		Periodical periodical = null;
 		try {
 			periodical = memoryRepositoryIinstance.getByTitle(title);

@@ -1,54 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	id="WebApp_ID" version="3.1">
-
-	<display-name>periodical</display-name>
-
-	<servlet>
-		<servlet-name>PeriodicalListServlet</servlet-name>
-		<servlet-class>ua.com.periodical.servlet.PeriodicalListServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>PeriodicalListServlet</servlet-name>
-		<url-pattern>/pages/periodicalList</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>AddServlet</servlet-name>
-		<servlet-class>ua.com.periodical.servlet.AddServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>AddServlet</servlet-name>
-		<url-pattern>/pages/AddServlet</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>HomeServlet</servlet-name>
-		<servlet-class>ua.com.periodical.servlet.HomeServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>HomeServlet</servlet-name>
-		<url-pattern></url-pattern>
-	</servlet-mapping>
-	<servlet>
-
-		<servlet-name>RemoveServlet</servlet-name>
-		<servlet-class>ua.com.periodical.servlet.RemoveServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>RemoveServlet</servlet-name>
-		<url-pattern>/pages/RemoveServlet</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-			<servlet-name>SearchServlet</servlet-name>
-		<servlet-class>ua.com.periodical.servlet.SearchServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>SearchServlet</servlet-name>
-		<url-pattern>/pages/SearchServlet</url-pattern>
-	</servlet-mapping>
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>periodical</display-name>
+  <servlet>
+    <servlet-name>PeriodicalListServlet</servlet-name>
+    <servlet-class>ua.com.periodical.servlet.PeriodicalListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PeriodicalListServlet</servlet-name>
+    <url-pattern>/pages/periodicalList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddServlet</servlet-name>
+    <servlet-class>ua.com.periodical.servlet.AddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddServlet</servlet-name>
+    <url-pattern>/pages/AddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>ua.com.periodical.servlet.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RemoveServlet</servlet-name>
+    <servlet-class>ua.com.periodical.servlet.RemoveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveServlet</servlet-name>
+    <url-pattern>/pages/RemoveServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SearchServlet</servlet-name>
+    <servlet-class>ua.com.periodical.servlet.SearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/pages/SearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-class>ua.com.periodical.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/pages/LoginServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

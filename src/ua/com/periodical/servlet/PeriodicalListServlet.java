@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ua.com.periodical.dao.MemoryRepositoryDao;
+import ua.com.periodical.dao.impl.MemoryRepositoryDaoImpl;
 import ua.com.periodical.model.Periodical;
 
 /**
@@ -27,7 +27,7 @@ public class PeriodicalListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		MemoryRepositoryDao memoryRepositoryIinstance = MemoryRepositoryDao.getInstance();
+		MemoryRepositoryDaoImpl memoryRepositoryIinstance = MemoryRepositoryDaoImpl.getInstance();
 		ArrayList<Periodical> list = memoryRepositoryIinstance.getPeriodicals();
 
 		if (list.isEmpty()) {

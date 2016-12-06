@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import sun.security.validator.ValidatorException;
+import ua.com.periodical.dao.impl.MemoryRepositoryDaoImpl;
 import ua.com.periodical.model.Periodical;
-import ua.com.periodical.dao.MemoryRepositoryDao;
 
 /**
  * In doGet method -  AddServlet just send redirect to Add.jsp.
@@ -50,7 +50,7 @@ public class AddServlet extends HttpServlet {
 			Double priceD = Double.parseDouble(price);
 
 			Periodical periodical = new Periodical(idInt, title, priceD, discription);
-			MemoryRepositoryDao memoryRepositoryIinstance = MemoryRepositoryDao.getInstance();
+			MemoryRepositoryDaoImpl memoryRepositoryIinstance = MemoryRepositoryDaoImpl.getInstance();
 			memoryRepositoryIinstance.addPeriodical(periodical);
 			
 			request.setAttribute("info", "succsessInfo");
