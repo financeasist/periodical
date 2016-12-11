@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="..\css\style.css">
 <link rel="stylesheet" type="text/css" href="..\css\800px.css"
 	media="screen and (max-width:900px)" />
-<title>Authentification</title>
+<title>Authemtification</title>
 </head>
 
 <body>
@@ -22,8 +23,8 @@
 					</ul>
 				</div>
 				<div id="registration-area">
-					<span class="registration-link"><a>Register | </a></span> <a
-						href="Login.jsp" class="registration-link"> Login</a>
+					<span class="registration-link"><a>${userName} | </a></span> <a
+						href="Login.jsp" class="registration-link">Go to Login</a>
 				</div>
 			</div>
 		</div>
@@ -31,25 +32,22 @@
 	<div class="container">
 		<div class="textShadow" id="content">
 			<div class="text-center">
-				<h3>To Login please enter your email and password in the table:</h3>
+				<h3>Welcome to periodical project !</h3>
 			</div>
 			<hr>
-			<div id="${info}">${String}</div>
 			<div id="${info}">
-				<%
-					if ((request.getAttribute("userName") == null) || (session.getAttribute("userName").equals(""))) {
-				%>
-				YOU ARE NOT LOGGED IN! <br /> <a href="Login.jsp">Please Login</a>
-				<%
-					}
-				%>
+				REGISTRATION IS SUCCESSFUL ! <br> <br> Please Login Here: <a
+					href='Login.jsp'> Login</a>
+
 			</div>
 		</div>
 	</div>
+
 	<div id="footer">
 		<address id="footer-container">
 			author: Roman Grupskyi <sup>&#174;</sup>
 		</address>
 	</div>
+
 </body>
 </html>

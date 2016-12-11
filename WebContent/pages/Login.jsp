@@ -22,7 +22,7 @@
 					</ul>
 				</div>
 				<div id="registration-area">
-					<span class="registration-link"><a>Register | </a></span> <a
+				<a class="registration-link" href="Register.jsp">Register | </a> <a
 						href="Login.jsp" class="registration-link"> Login</a>
 				</div>
 			</div>
@@ -30,8 +30,8 @@
 	</div>
 	<div class="container">
 		<div class="textShadow" id="content">
-			<span class="text-center"><h3> To Login please enter your email and password in the table:</h3>
-			</span>
+			<div class="text-center"><h3> To Login please enter your email and password in the table:</h3>
+			</div>
 			<hr>
 			<div id="${info}">${String}</div>
 			<form id="form" action="LoginServlet" method="post">
@@ -45,9 +45,9 @@
 						</tr>
 					</thead>
 					<tr>
-						<td width="75"><label for="email"> Email: </label></td>
-						<td width="182"><input type="text" name="email"
-							placeholder="Enter your email here"><br><br></td>
+						<td width="100"><label for="userName"> User Name: </label></td>
+						<td width="182"><input type="text" name="userName"
+							placeholder="Enter your user name here"><br><br></td>
 					</tr>
 					<tr>
 						<td><label for="password">Password: </label></td>
@@ -59,7 +59,7 @@
 						<td><input type="submit" value="Login" style="width: 120px;"><br></td>
 					</tr>
 					<tr>
-                        <td colspan="2">Yet Not Registered?! <a href="reg.jsp">:   Register Here</a></td>
+                        <td colspan="2" >Yet Not Registered?! <a href="Register.jsp" style="text-decoration:none">:   Register Here</a></td>
                     </tr>
 				</table>
 			</form>

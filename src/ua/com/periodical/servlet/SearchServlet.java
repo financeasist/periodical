@@ -9,13 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ua.com.periodical.dao.impl.MemoryRepositoryDaoImpl;
 import ua.com.periodical.model.Periodical;
+import ua.com.periodical.service.PeriodicalService;
+import ua.com.periodical.service.impl.PeriodicalServiceImpl;
 
 /**
- * SearchServlet search  periodical by title and send it into list in request Attribute;
+ * SearchServlet does search periodical by title and send it into list in
+ * request Attribute;
  * 
- * @version 1.2 15.11.2016
+ * @version 1.3 08.12.2016
  * @author Roman Grupskyi
  */
 @WebServlet("/SearchServlet")
@@ -26,34 +28,27 @@ public class SearchServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String title = request.getParameter("title");
-		MemoryRepositoryDaoImpl memoryRepositoryIinstance = MemoryRepositoryDaoImpl.getInstance();
-		Periodical periodical = null;
-		try {
-			periodical = memoryRepositoryIinstance.getByTitle(title);
-			System.out.println(periodical.toString());
-		} catch (Exception e) {
-			request.setAttribute("info", "info");
-			request.setAttribute("String", " OBJECT WITH THIS TITLE NOT FOUND!");
-		}
-		ArrayList<Periodical> list = new ArrayList<Periodical>();
-		list.add(periodical);
-
 		if (title == null || title.equals("")) {
-			request.setAttribute("info", "info");
-			request.setAttribute("String", " OBJECT WITH THIS TITLE NOT FOUND!");
+			setAttributeError(request);
 		} else {
+			PeriodicalService service = new PeriodicalServiceImpl();
+			ArrayList<Periodical> list = new ArrayList<Periodical>();
 
-			request.setAttribute("list", list);
+			Periodical periodical = service.getPeriodicalByTitle(title);
+			list.add(periodical);
 
+			if (periodical == null) {
+				setAttributeError(request);
+			} else {
+				request.setAttribute("list", list);
+			}
 		}
 		request.getRequestDispatcher("/pages/Dashboard.jsp").forward(request, response);
-		;
+
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		doGet(request, response);
+	private void setAttributeError(HttpServletRequest request) {
+		request.setAttribute("info", "info");
+		request.setAttribute("String", " OBJECT WITH THIS TITLE NOT FOUND!");
 	}
-
 }

@@ -23,8 +23,8 @@
 					</ul>
 				</div>
 				<div id="registration-area">
-					<span class="registration-link"><a>Register | </a></span> <a
-						href="Login.jsp" class="registration-link"> Login</a>
+					<a class="registration-link" href="#">${userName} | </a> <a
+						href="logout.jsp" class="registration-link"> LogOut</a>
 				</div>
 			</div>
 		</div>
@@ -33,8 +33,9 @@
 				<div id="mesage-block" class="${info}">${String}</div>
 				<div id="form-container">
 					<form action="../pages/SearchServlet" method="get">
-						<input id="search" type="text" name="title" placeholder="search by title here ">
-						<input type="submit" value="Search" id="searchBatton">
+						<input id="search" type="text" name="title"
+							placeholder="search by title here "> <input type="submit"
+							value="Search" id="searchBatton">
 					</form>
 				</div>
 				<br> <br> <br>

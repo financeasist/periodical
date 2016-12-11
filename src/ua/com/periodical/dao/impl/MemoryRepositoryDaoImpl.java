@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 import ua.com.periodical.dao.MemoryRepositoryDao;
 import ua.com.periodical.model.Periodical;
+import ua.com.periodical.model.User;
 
 /**
  * This class is memory repository for periodicals list. Created by Bill Pugh
@@ -13,7 +14,7 @@ import ua.com.periodical.model.Periodical;
  * @version 1.2 10.11.2016
  * @author Roman Grupskyi
  */
-public class MemoryRepositoryDaoImpl implements MemoryRepositoryDao{
+public class MemoryRepositoryDaoImpl implements MemoryRepositoryDao {
 
 	private ArrayList<Periodical> periodicals;
 
@@ -41,42 +42,69 @@ public class MemoryRepositoryDaoImpl implements MemoryRepositoryDao{
 		periodicals.add(periodical);
 	}
 
-	public ArrayList<Periodical> getPeriodicals() {
+	public ArrayList<Periodical> getAllPeriodicals() {
 		return periodicals;
 	}
 
 	public void setPeriodicals(ArrayList<Periodical> periodicals) {
 		this.periodicals = periodicals;
 	}
-	
+
 	/**
 	 * This method remove Periodical by id from periodicals List
 	 * 
 	 * @param periodical
 	 */
-	public void removeById(Integer idInt) {
-		Iterator<Periodical> iterator = periodicals.iterator();
-		while (iterator.hasNext()) {
-			Periodical periodical = iterator.next();
-			if (periodical.getId() == idInt)
-				iterator.remove();
+	public void removePeriodicalById(Integer idInt, User user) {
+		String role = user.getRole();
+		if (role.equals("admin")) {
+			Iterator<Periodical> iterator = periodicals.iterator();
+			while (iterator.hasNext()) {
+				Periodical periodical = iterator.next();
+				if (periodical.getId() == idInt)
+					iterator.remove();
+			}
+		}else
+		{
+			throw new IllegalArgumentException();
 		}
 	}
-	
+
+	/**
+	 * This method remove Periodical by title from periodicals List
+	 * 
+	 * @param periodical
+	 * @return void
+	 */
+	public void removePeriodicalByTitle(String title, User user) {
+		String role = user.getRole();
+		if (role.equals("admin")) {
+			Iterator<Periodical> iterator = periodicals.iterator();
+			while (iterator.hasNext()) {
+				Periodical periodical = iterator.next();
+				if (periodical.getTitle().equals(title))
+					iterator.remove();
+			}
+		}else
+		{
+			throw new IllegalArgumentException();
+		}
+	}
+
 	/**
 	 * This method get Periodical by title from periodicals List
 	 * 
 	 * @param periodical
 	 */
-	public Periodical getByTitle(String title) {
+	public Periodical getPeriodicalByTitle(String title) {
 		Periodical periodical = null;
-		for (Periodical per:periodicals){
-			if(per.getTitle().equals(title)) {
+		for (Periodical per : periodicals) {
+			if (per.getTitle().equals(title)) {
 				periodical = per;
 			}
 		}
-		
+
 		return periodical;
-		
+
 	}
 }

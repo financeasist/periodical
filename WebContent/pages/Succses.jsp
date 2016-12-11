@@ -23,27 +23,25 @@
 					</ul>
 				</div>
 				<div id="registration-area">
-					<span class="registration-link"><a>Register | </a></span> <a
-						href="Login.jsp" class="registration-link"> Login</a>
+					<span class="registration-link"><a>${userName} | </a></span> <a
+						href="logout.jsp" class="registration-link"> LogOut</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="textShadow" id="content">
-			<span class="text-center">
+			<div class="text-center">
 				<h3>To Login please enter your email and password in the table:</h3>
-			</span>
+			</div>
 			<hr>
-			<div id="${info}">WELCOME ${email} !
-				
-				<br>
-				<br>
-				<a href='logout.jsp'>Log out</a>
-				
-				</div>
+			<div id="${info}">
+				WELCOME ${userName} ! <br> <br> <a href='logout.jsp'>Log
+					out</a>
+
 			</div>
 		</div>
+	</div>
 
 	<div id="footer">
 		<address id="footer-container">

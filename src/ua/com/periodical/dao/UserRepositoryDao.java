@@ -4,15 +4,18 @@ import java.util.Set;
 
 import ua.com.periodical.model.User;
 
-public interface UserRepositoryDao {
+public interface UserRepositoryDao{
 
-	public void addUser(Integer id,String email, String password);
+	public void addUser(String id,String email, String password);
 	public Set<User> getAllUsers();
-	public User getUserById(Integer Id);
+	public User getUserById(String Id);
 	public User getUserByEmail(String email);
-	public User getUserByEmail(String email, String password);
+	public User getUserByEmailAndPassword(String email, String password);
 	public void updatePasswordByEmail(String password, String email); 
-	public void removeById(Integer idInt);
+	public void removeById(String idInt);
+	public Boolean IsUserExist(String userName, String password);
+	public User getUserByUserNameAndPassword(String userName, String password);
+	public Boolean IfUserExist(User user);
 	
 }
 

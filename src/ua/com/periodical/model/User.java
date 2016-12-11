@@ -2,25 +2,32 @@ package ua.com.periodical.model;
 
 public class User {
 
-	Integer id;
+	String userName;
 	String email;
 	String password;
-	
-	
-	public User(Integer id, String email, String password) {
-	
-		this.id = id;
+	String role;
+
+	public User(String userName, String email, String password) {
+		this.userName = userName;
 		this.email = email;
 		this.password = password;
-		
 	}
 
-	public Integer getId() {
-		return id;
+	public User(String userName, String email, String password, String role) {
+
+		this.userName = userName;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public String getId() {
+		return userName;
+	}
+
+	public void setId(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -39,11 +46,25 @@ public class User {
 		this.email = email;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email +" password= " + password + "]";
+		return "User [userName=" + userName + ", email=" + email + ", password=" + password + ", role=" + role + "]";
 	}
-	
-	
-	
+
 }

@@ -24,9 +24,9 @@ public class UsersRepositoryDaoImpl implements UserRepositoryDao {
 	 */
 	private UsersRepositoryDaoImpl() {
 		UsersRepositoryDaoImpl.setUsers(new HashSet<User>());
-		users.add(new User(1, "login1@gmail.com", "1111"));
-		users.add(new User(2, "login2@gmail.com", "2222"));
-		users.add(new User(3, "login3@gmail.com", "3333"));
+		users.add(new User("admin", "login1@gmail.com", "1111", "admin"));
+		users.add(new User("user2", "login2@gmail.com", "2222", "user"));
+		users.add(new User("user3", "login3@gmail.com", "3333", "user"));
 	}
 
 	private static class SingletonHelper {
@@ -49,11 +49,11 @@ public class UsersRepositoryDaoImpl implements UserRepositoryDao {
 	/**
 	 * This method takes user from users by id;
 	 * 
-	 * @param id
+	 * @param userName
 	 * @return User
 	 */
 	@Override
-	public User getUserById(Integer Id) {
+	public User getUserById(String Id) {
 		User user = null;
 		for (User uzer : users) {
 			if (uzer.getId() == Id) {
@@ -84,7 +84,7 @@ public class UsersRepositoryDaoImpl implements UserRepositoryDao {
 	 * This method removes user from users by id;
 	 */
 	@Override
-	public void removeById(Integer idInt) {
+	public void removeById(String idInt) {
 		Iterator<User> iterator = users.iterator();
 		while (iterator.hasNext()) {
 			User user = iterator.next();
@@ -101,7 +101,7 @@ public class UsersRepositoryDaoImpl implements UserRepositoryDao {
 	 * @return void
 	 */
 	@Override
-	public void addUser(Integer id, String email, String password) {
+	public void addUser(String id, String email, String password) {
 		User user = new User(id, email, password);
 		users.add(user);
 
@@ -132,10 +132,27 @@ public class UsersRepositoryDaoImpl implements UserRepositoryDao {
 	 * @return User
 	 */
 	@Override
-	public User getUserByEmail(String email, String password) {
+	public User getUserByEmailAndPassword(String email, String password) {
 		User user = null;
 		for (User uzer : users) {
 			if (uzer.getEmail().equals(email) && uzer.getPassword().equals(password)) {
+				user = uzer;
+			}
+		}
+		return user;
+	}
+
+	/**
+	 * This method takes user from users by userName;
+	 * 
+	 * @param String
+	 * @return User
+	 */
+	@Override
+	public User getUserByUserNameAndPassword(String userName, String password) {
+		User user = null;
+		for (User uzer : users) {
+			if (uzer.getUserName().equals(userName) && uzer.getPassword().equals(password)) {
 				user = uzer;
 			}
 		}
@@ -149,13 +166,23 @@ public class UsersRepositoryDaoImpl implements UserRepositoryDao {
 	 * @param String,String
 	 * @return Boolean
 	 */
-	public Boolean IsUserExist(String email, String password) {
+	public Boolean IsUserExist(String userName, String password) {
 		Boolean exist = false;
 		for (User uzer : users) {
-			if (uzer.getEmail().equals(email) && uzer.getPassword().equals(password)) {
+			if (uzer.getUserName().equals(userName) && uzer.getPassword().equals(password)) {
 				exist = true;
+				break;
 			}
 		}
 		return exist;
 	}
+
+	public Boolean IfUserExist(User user) {
+		Boolean exist = false;
+		if (users.contains(user))
+			exist = true;
+
+		return exist;
+	}
+
 }

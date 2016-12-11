@@ -20,23 +20,23 @@
 					</ul>
 				</div>
 				<div id="registration-area">
-					<span class="registration-link"><a>Register | </a></span> <a
-						href="Login.jsp" class="registration-link"> Login</a>
+					<a class="registration-link" href="#">${userName} | </a> <a
+						href="Login.jsp" class="registration-link"> LogOut</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="textShadow" id="content">
-			<span class="text-center">
+			<div class="text-center">
 				<h3>To ADD new periodical, enter the value to requred filds in
 					the table:</h3>
-			</span>
+			</div>
 			<hr>
 			<div id="${info}">${String}</div>
 			<form id="form" action="AddServlet" method="post">
 
-				<table height="298" border="1" id="addForm">
+				<table border="1" id="addForm">
 					<thead>
 						<tr>
 							<th colspan="2" style="padding-top: 10px;">Please add
@@ -45,7 +45,7 @@
 						</tr>
 					</thead>
 					<tr>
-						<td width="110"><label for="id"> Id: </label></td>
+						<td><label for="id"> Id: </label></td>
 						<td width="182"><input type="text" name="id"
 							placeholder="Enter periodicals's id here"><br> <br></td>
 					</tr>
@@ -65,10 +65,6 @@
 								placeholder="Enter description here"></textarea><br></td>
 					</tr>
 					<tr>
-						<td><label for="checkbox">Type: </label></td>
-						<td><input type="checkbox" name="checkbox"><br></td>
-					</tr>
-					<tr>
 						<td></td>
 						<td><input type="submit" value="Save" style="width: 160px;"><br></td>
 					</tr>
@@ -81,7 +77,6 @@
 		<address id="footer-container">
 			author: Roman Grupskyi <sup>&#174;</sup>
 		</address>
-	</div>
 	</div>
 </body>
 </html>

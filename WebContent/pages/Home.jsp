@@ -21,43 +21,49 @@
 					</ul>
 				</div>
 				<div id="registration-area">
-					<span class="registration-link"><a>Register | </a></span> <a
+					<a class="registration-link" href="Register.jsp">Register | </a> <a
 						href="Login.jsp" class="registration-link"> Login</a>
 				</div>
 			</div>
 		</div>
 		<div class="container">
 			<div class="textShadow" id="content">
-				<span style="text-align:center">
+				<div style="text-align: center">
 					<h1>Welcome to the periodical project!</h1>
-				</span>
+				</div>
 				<hr>
 				<h3>Here are some features available at the moment:</h3>
-				<br>
 				<ul>
 					<li><h4>To ADD new periodical:</h4>
 					<li class="instruction">You have to press on button 'Add' in
 						the top navigation</li>
 					<li class="instruction">and than enter the value to requred
 						filds in the table:</li>
-					<div class="image-add"></div>
+					<li>
+						<div class="image-add"></div>
 					</li>
-					<br>
-					<hr>
+				</ul>
+				<br>
+				<hr>
+				<ul>
 					<li><h4>To Display/Search/Remove periodical:</h4>
 					<li class="instruction">You have to press on button
 						'Dashboard' in the top navigation</li>
 					<li class="instruction">and than you can do it in the next
 						table:</li>
-					<div class="image-display"><a href="#"></a></div>
+					<li>
+						<div class="image-display"></div>
 					</li>
-					<br>
-					<hr>
 				</ul>
+				<br>
+				<hr>
+
 			</div>
 		</div>
 		<div id="footer">
-			<address id="footer-container">author: Roman Grupskyi <sup>&#174;</sup></address>
+			<address id="footer-container">
+				author: Roman Grupskyi <sup>&#174;</sup>
+			</address>
 		</div>
 	</div>
 </body>
