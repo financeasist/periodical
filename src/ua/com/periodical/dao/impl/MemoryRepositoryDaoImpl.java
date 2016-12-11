@@ -17,12 +17,15 @@ import ua.com.periodical.model.User;
 public class MemoryRepositoryDaoImpl implements MemoryRepositoryDao {
 
 	private ArrayList<Periodical> periodicals;
-
+	
 	/**
 	 * Here is implementation by Singleton pattern
 	 */
 	private MemoryRepositoryDaoImpl() {
 		this.setPeriodicals(new ArrayList<Periodical>());
+		periodicals.add(new Periodical(1,"Forbs", 7.05, "рейтинг успішних людей"));
+		periodicals.add(new Periodical(2,"woman", 3.05, "all about women"));
+		periodicals.add(new Periodical(3,"Hi-Tech", 4.00, "some description"));
 	}
 
 	private static class SingletonHelper {
