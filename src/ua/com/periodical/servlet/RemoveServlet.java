@@ -48,9 +48,9 @@ public class RemoveServlet extends HttpServlet {
 			errorUrl =  "../pages/periodicalList?key1=info&value1=info&key2=String&value2=YOU DO NOT HAVE ENOUGH RIGHTS TO DO THIS OPERATION!";
 
 		}
-		catch (Exception e) {
-			isSuccsess = false;
-		}
+//		catch (Exception e) {
+//			isSuccsess = false;
+//		}
 		if (isSuccsess)
 			response.sendRedirect(succsessUrl);
 		else

@@ -20,7 +20,7 @@ public class HomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.sendRedirect("pages/Home.jsp");
+		response.sendRedirect("periodical/WebContent/pages/Home.jsp");
 	}
 
 }
